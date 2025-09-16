@@ -116,8 +116,7 @@ def task_10():
           f"The cost of the third book is division of sum of first and second book, (8 + 10) / 2, so the cost is {third_book_cost}. "
           f"and the total cost of all books is the sum of all books 8 + 10 + 9, so the total cost is: {all_books_cost}")
 
-
-class Main:
+if __name__ == '__main__':
     task_1()
     task_2()
     task_3()
