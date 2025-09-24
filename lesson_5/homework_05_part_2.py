@@ -25,7 +25,7 @@ people_records = [
 my_record = ('Nate', 'Owens', 19, 'Cyclist', 'Seoul')
 people_records.insert(0, my_record)
 
-print(people_records)
+print("Task 1:\n", people_records)
 
 #Index swapping (Fully custom method using Notes from the lesson)
 
@@ -67,9 +67,10 @@ def task_3():
     print(f"The answer is: {y}")
 
     #SandBox:
-    q = [x[2]>=30 for x in [people_records[6], people_records[10], people_records[13]]]
-    print(q)
+    sand_box_method = [x[2]>=30 for x in [people_records[6], people_records[10], people_records[13]]]
 
+    print(sand_box_method)
+    print(people_records)
 
 if __name__ == "__main__":
     index_swapping_method_1()
