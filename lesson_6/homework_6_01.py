@@ -5,7 +5,7 @@ def task_1():
 
     altered_user_input = set(user_input)
     print(f"- Amount of unique chars is: {altered_user_input}\n- Amount of the unique symbols is: {len(altered_user_input)}")
-    print("-"*200)
+    print("-"*201)
 
     if len(altered_user_input) > 10:
         return True
@@ -15,4 +15,5 @@ def task_1():
 if __name__ == "__main__":
     result = task_1()
     print(f"\n The final Result is: {result}")
+
 
