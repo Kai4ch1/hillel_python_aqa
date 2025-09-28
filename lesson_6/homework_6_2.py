@@ -1,5 +1,6 @@
 def task_6_2():
     while True:
+
         user_input = input("Enter the word which contains 'h' Or 'H:\n")
         print(user_input)
 
