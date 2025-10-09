@@ -1,33 +1,40 @@
 class Student:
+    def __init__(self, name, age, surname, average_score):
+        self.name: str = name
+        self.age: int = age
+        self.surname: str = surname
+        self.average_score: float = average_score
 
-   def __init__(self, name, surname, average_score):
-        self.name:str = name
-        self.surname:str = surname
-        self.average_score = average_score
+    def print_the_info(self):
+        print("-----STUDENT--INFO--1980--STYLE-----")
+        print(f"\n Name: {self.name}")
+        print(f"\n Surname: {self.surname}")
+        print(f"\n age: {self.age}")
+        print(f"\n Average score: {self.average_score}")
+
+    def change_the_score(self):
+        while True:
+            choice = input("\nPress 'a' to change the Student`s average score, press 'b' to display the current score:")
+            if choice == 'a':
+                new_average_score = input("Enter the new average score:\n")
+                self.average_score = new_average_score
+                print("✅ The score has been updated successfully")
+            elif choice == "b":
+                self.print_the_info()
+            else:
+                print("-"*200)
+                print("\n\nOops... The entered option is an incorrect, restart the program and try again!")
+                break
 
 
-call = Student(name=input("Enter Student`s name:\n"),
-               surname=input("Enter Student`s surname:\n"),
-               average_score=input("Enter Student`s average score:\n"))
+def main():
+    student_1 = Student(name=str(input("\nInput Student`s name: ")),
+                        age=int(input("\nEnter Student`s age: ")),
+                        surname=str(input("\nInsert Student`s surname: ")),
+                        average_score=float(input("\nPaste the Student`s average score: "))
+                        )
+    student_1.print_the_info()
+    student_1.change_the_score()
 
-print("-"*200)
-print(f"Student name:\n{call.name}, Student surname:\n{call.surname},"
-      f"Average score is:\n{call.average_score}")
-
-choice = input("-"*200 + "\nPress 'a' to change the average score, press 'b' to display Student info:\n")
-
-if choice == "a":
-    x = input("Enter new average score:")
-    call.average_score = x
-elif choice == "b":
-    print("-"*200, f"\n Student info: \n{call.name}, \n{call.surname},"
-                   f"\n{call.average_score}")
-else:
-    print("You have chosen the wrong button, try reload the program and start again")
-
-print("-"*200,
-      f"\nStudent name: -> {call.name};"
-      f"\nStudent surname: -> {call.surname};"
-      f"\nAverage score is: -> {call.average_score}")
-
-print("-"*200)
+if __name__ == "__main__":
+    main()
