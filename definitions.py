@@ -8,6 +8,12 @@ BASE_PATH = DEFINITION_FILE.parent
 
 LINK_TO_CSV_FILES = BASE_PATH / "lesson_16" / "1_csv" / "csv_files_to_be_processed"
 
+LINK_TO_JSON_STORAGE = BASE_PATH / "lesson_16" / "2_json" / "json_files_to_be_processed"
+
+PROCESSED_JSON_FILE = BASE_PATH / "lesson_16" / "2_json" / "result_of_test_json.json"
+
+XML_FILES_STORAGE = BASE_PATH / "lesson_16" / "3_xml" / "xml_files_to_be_parsed"
+
 PROCESSED_CSV_FILE = BASE_PATH / "lesson_16" / "1_csv" / "result_of_2_processed_csv_files.csv"
 
 PATH_TO_CSV_MERGED_FILE = BASE_PATH / "csv_processed_file"
