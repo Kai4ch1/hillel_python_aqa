@@ -16,4 +16,6 @@ XML_FILES_STORAGE = BASE_PATH / "lesson_16" / "3_xml" / "xml_files_to_be_parsed"
 
 PROCESSED_CSV_FILE = BASE_PATH / "lesson_16" / "1_csv" / "result_of_2_processed_csv_files.csv"
 
+SAVE_DECORATOR_LOG = BASE_PATH / "lesson_17" /"3_decorators"
+
 PATH_TO_CSV_MERGED_FILE = BASE_PATH / "csv_processed_file"
