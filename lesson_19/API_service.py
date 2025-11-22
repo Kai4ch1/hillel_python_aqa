@@ -23,7 +23,7 @@ def save_random_photo(data, file_name : str):
         response = requests.get(url=photo)
         content = response.content
         with open(file_name, "wb") as ph:
-                ph.write(bytes(content))
+                ph.write(content)
     except json.JSONDecodeError:
             print("Wrong photo format, upload the new ones and try again")
 
