@@ -1,0 +1,7 @@
+2025-12-10 21:58:13,498 - INFO - Test: test_the_cars | Result: PASSED
+2025-12-10 21:58:13,502 - INFO - Test: test_sort_by_price | Result: PASSED
+2025-12-10 21:58:13,505 - INFO - Test: test_sort_by_brand | Result: PASSED
+2025-12-10 21:58:13,508 - INFO - Test: test_sort_by_limit | Result: PASSED
+2025-12-10 21:58:13,511 - INFO - Test: test_sort_and_limit_by | Result: PASSED
+2025-12-10 21:58:13,514 - INFO - Test: test_negative_endpoint | Result: PASSED
+2025-12-10 21:58:13,517 - INFO - Test: test_negative_sort_type | Result: PASSED
