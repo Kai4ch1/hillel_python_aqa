@@ -8,7 +8,7 @@ def task_1_is_palindrome(i):
 
 
 @pytest.mark.parametrize(
-    "test_data, result", [
+    "data, result", [
         ("aqa", True),
         ("121", True),
         ("1qwe1", False),
