@@ -4,7 +4,7 @@ import json
 import logging
 json_storage = definitions.LINK_TO_JSON_STORAGE
 json_file_1 = json_storage / 'localizations_en.json'
-json_file_2 = json_storage / 'login.json'
+json_file_2 = json_storage / 'test-front.json'
 
 logging.basicConfig(
             filename='json_parse.log',
