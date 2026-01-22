@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Kai4ch1/hillel_python_aqa.git'
+            }
+        }
+        stage('Install dependencies'){
+            steps{
+                sh 'python3 -m venv venv'
+                sh 'venv/bin/pip install -r requirements.txt'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'venv/bin/pytest lesson_26/tests/test_login.py'
+            }
+        }
+        stage('Report'){
+            steps{
+                allure([
+                    includeProperties: false,
+                    jdk: 'allure-reports',
+                    results: [[path: 'allure-results']]
+                ])
+            }
+        }
+    }
+    post{
+        always {
+            emailext body: "Build URL: ${BUILD_URL}",
+                     subject: "Jenkins Build ${BUILD_NUMBER}: " + currentBuild.currentResult,
+                     to: 'InsertYour@Mail.Here, carl4welps@gmail.com'
+        }
+
+    }
+}
