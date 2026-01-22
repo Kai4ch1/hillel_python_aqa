@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Kai4ch1/hillel_python_aqa.git'
-            }
-        }
+
         stage('Install dependencies'){
             steps{
                 sh 'python3 -m venv venv'
