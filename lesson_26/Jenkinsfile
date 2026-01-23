@@ -26,7 +26,7 @@ pipeline {
         always {
             emailext body: "Build URL: ${BUILD_URL}",
                      subject: "Jenkins Build ${BUILD_NUMBER}: " + currentBuild.currentResult,
-                     to: 'InsertYour@Mail.Here, carl4welps@gmail.com'
+                     to: 'carl4welps@gmail.com'
         }
 
     }
