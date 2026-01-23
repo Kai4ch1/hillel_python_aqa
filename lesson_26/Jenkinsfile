@@ -22,12 +22,11 @@ pipeline {
             }
         }
     }
-    post{
-        always {
-            emailext body: "Build URL: ${BUILD_URL}",
-                     subject: "Jenkins Build ${BUILD_NUMBER}: " + currentBuild.currentResult,
-                     to: 'carl4welps@gmail.com'
-        }
+//        post{
+//        always {
+//            emailext body: "Build URL: ${BUILD_URL}",
+//                     subject: "Jenkins Build ${BUILD_NUMBER}: " + currentBuild.currentResult,
+//                     to: 'carl4welps@gmail.com'
+//        }
 
-    }
-}
+//    }
