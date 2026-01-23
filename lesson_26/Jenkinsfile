@@ -1,23 +1,20 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/playwright/python:v1.40.0-jammy'
-        }
-    }
-
+    agent any
     stages {
-        stage('Install dependencies') {
-            steps {
-                sh 'pip install -r requirements.txt'
+        stage('Install dependencies'){
+            steps{
+                sh 'python3 -m venv venv'
+                sh 'venv/bin/pip install -r requirements.txt'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'pytest lesson_26/tests/test_login.py'
+        stage('Build'){
+            steps{
+                sh 'venv/bin/playwright install'
+                sh 'venv/bin/pytest lesson_26/tests/test_login.py'
             }
         }
-        stage('Report') {
-            steps {
+        stage('Report'){
+            steps{
                 allure([
                     includeProperties: false,
                     jdk: 'allure-reports',
@@ -26,11 +23,12 @@ pipeline {
             }
         }
     }
-    post {
+    post{
         always {
             emailext body: "Build URL: ${BUILD_URL}",
                      subject: "Jenkins Build ${BUILD_NUMBER}: " + currentBuild.currentResult,
                      to: 'carl4welps@gmail.com'
         }
+
     }
 }
