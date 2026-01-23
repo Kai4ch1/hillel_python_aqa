@@ -10,6 +10,7 @@ pipeline {
         stage('Build'){
             steps{
                 sh 'venv/bin/playwright install'
+                sh 'sudo playwright install-deps'
                 sh 'venv/bin/pytest lesson_26/tests/test_login.py'
             }
         }
